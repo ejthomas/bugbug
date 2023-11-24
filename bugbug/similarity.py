@@ -235,15 +235,15 @@ class BaseSimilarity(abc.ABC):
 
                 apk.append(score / min(len(duplicates[bug["id"]]), 10))
 
-        logger.info("Recall @ 1: %d%", recall_rate_1 / total_r * 100)
-        logger.info("Recall @ 5: %d%", recall_rate_5 / total_r * 100)
-        logger.info("Recall @ 10: %d%", recall_rate_10 / total_r * 100)
-        logger.info("Precision @ 1: %d%", precision_rate_1 / queries * 100)
-        logger.info("Precision @ 5: %d%", precision_rate_5 / queries * 100)
-        logger.info("Precision @ 10: %d%", precision_rate_10 / queries * 100)
-        logger.info("Recall: %d%", hits_r / total_r * 100)
-        logger.info("Precision: %d%", hits_p / total_p * 100)
-        logger.info("MAP@k : %d%", np.mean(apk) * 100)
+        logger.info("Recall @ 1: %0.2f%", recall_rate_1 / total_r * 100)
+        logger.info("Recall @ 5: %0.2f%", recall_rate_5 / total_r * 100)
+        logger.info("Recall @ 10: %0.2f%", recall_rate_10 / total_r * 100)
+        logger.info("Precision @ 1: %0.2f%", precision_rate_1 / queries * 100)
+        logger.info("Precision @ 5: %0.2f%", precision_rate_5 / queries * 100)
+        logger.info("Precision @ 10: %0.2f%", precision_rate_10 / queries * 100)
+        logger.info("Recall: %0.2f%", hits_r / total_r * 100)
+        logger.info("Precision: %0.2f%", hits_p / total_p * 100)
+        logger.info("MAP@k : %0.2f%", np.mean(apk) * 100)
 
     @abc.abstractmethod
     def get_distance(self, query1, query2):

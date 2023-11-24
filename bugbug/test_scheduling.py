@@ -505,7 +505,7 @@ def generate_failing_together_probabilities(
         failure_count = count_both_failures[couple]
         run_count = count_runs[couple]
         logger.info(
-            "%s - %s redundancy confidence %f, support %d (%d over %d).",
+            "%s - %s redundancy confidence %0.2f, support %0.2f (%d over %d).",
             couple[0],
             couple[1],
             confidence,
@@ -521,7 +521,7 @@ def generate_failing_together_probabilities(
         failure_count = count_both_failures[couple]
         run_count = count_runs[couple]
         logger.info(
-            "%s - %s redundancy confidence %f, support %d (%d over %d).",
+            "%s - %s redundancy confidence %0.2f, support %0.2f (%d over %d).",
             couple[0],
             couple[1],
             confidence,
@@ -576,7 +576,7 @@ def generate_failing_together_probabilities(
             failing_together[couple[0]][couple[1]] = (support, confidence)
 
     for percentage, count in count_redundancies.most_common():
-        logger.info("%d with %s confidence", count, percentage)
+        logger.info("%d with %0.2f confidence", count, percentage)
 
     failing_together_db = get_failing_together_db(granularity, False)
 
